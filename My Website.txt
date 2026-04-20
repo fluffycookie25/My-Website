@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {outline: 2px solid black;
+  padding: 1em;
+  background-image: url('https://i.pinimg.com/originals/53/f0/e7/53f0e71f528d032ca2e64b9e76037282.gif');
+  background-repeat: no-repeat;
+  background-size: cover;}
+h1   {color: black;}
+p    {color: purple;}
+</style>
+</head>
+<body>
+
+<h1>My webpage!</h1>
+<p>I'm Erin!</p>
+  <img src= "https://i.pinimg.com/736x/6e/77/86/6e77862832abd63419ef15a8b7d5f2eb.jpg" height="300" width="200" alt="IRIS"/>
+<p> a </p>
+<p> b </p>
+<p> c </p>
+<p> d </p>
+<p> a </p>
+<p> b </p>
+<p> c </p>
+<p> d </p>
+<p> a </p>
+<p> b </p>
+<p> c </p>
+<p> d </p>
+</body>
+</html>

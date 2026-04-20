@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Image Generator</title>
+
+<style>
+  body {
+    font-family: Arial;
+    text-align: center;
+    padding: 2em;
+    background: #f3f3f3;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  input {
+    padding: 10px;
+    width: 300px;
+    margin-top: 1em;
+  }
+
+  button {
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+  p {
+    color: #444;
+  }
+
+  img {
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>🎨 AI Image Generator</h1>
+
+<p>Enter a prompt and generate an AI image instantly.</p>
+
+<input id="prompt" placeholder="e.g. cyberpunk city">
+<button onclick="generate()">Generate</button>
+
+<div id="result"></div>
+
+<script>
+function generate() {
+  const prompt = document.getElementById("prompt").value;
+  const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}`;
+  document.getElementById("result").innerHTML =
+    `<img src="${url}" width="350">`;
+}
+</script>
+
+</body>
+</html>

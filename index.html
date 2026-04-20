@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erin | Portfolio</title>
+
+<style>
+  body {
+    outline: 2px solid black;
+    margin: 0;
+    padding: 1em;
+    background-image: url('https://i.pinimg.com/originals/53/f0/e7/53f0e71f528d032ca2e64b9e76037282.gif');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: white;
+    transition: 0.3s;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+
+  button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #6a0dad;
+    color: white;
+  }
+
+  .container {
+    text-align: center;
+    padding: 2em;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+    color: #2c003e;
+  }
+
+  .subtitle {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  img {
+    border-radius: 10px;
+    margin: 1em 0;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+    margin-top: 2em;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.92);
+    color: #222;
+    padding: 1.5em;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card h3 {
+    color: #6a0dad;
+    margin-bottom: 0.5em;
+  }
+
+  .card p {
+    font-size: 0.9em;
+    color: #333;
+  }
+
+  .light-mode {
+    background: white;
+    color: black;
+  }
+
+  .light-mode nav {
+    background: #eee;
+    color: black;
+  }
+
+  .light-mode .card {
+    background: #f4f4f4;
+    color: black;
+  }
+
+  .light-mode h1 {
+    color: #111;
+  }
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div>Erin.dev</div>
+  <button onclick="toggleTheme()">Toggle Theme</button>
+</nav>
+
+<div class="container">
+
+  <h1>Hello, I'm Erin 👋</h1>
+  <p class="subtitle">Aspiring Software Engineer</p>
+
+  <img src="https://i.pinimg.com/736x/6e/77/86/6e77862832abd63419ef15a8b7d5f2eb.jpg" height="250">
+
+  <div class="projects">
+
+    <div class="card" onclick="location.href='ai.html'">
+      <h3>AI Image Generator</h3>
+      <p>Generate AI images from text prompts using a simple interface.</p>
+    </div>
+
+    <div class="card" onclick="location.href='tasks.html'">
+      <h3>Task Manager</h3>
+      <p>Create, manage, and delete tasks in a simple productivity tool.</p>
+    </div>
+
+    <div class="card" onclick="location.href='social.html'">
+      <h3>Social Media Dashboard</h3>
+      <p>Post updates instantly and view a live feed of your activity.</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle("light-mode");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Social Dashboard</title>
+
+<style>
+  body {
+    font-family: Arial;
+    text-align: center;
+    padding: 2em;
+    background: #ffe;
+  }
+
+  h1 { font-size: 2.5em; margin-bottom: 0; }
+
+  .desc {
+    color: #444;
+    margin-bottom: 1em;
+  }
+
+  input {
+    padding: 10px;
+    width: 240px;
+  }
+
+  button {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .post {
+    background: white;
+    color: black;
+    margin: 10px auto;
+    width: 320px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .delete-btn {
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>📱 Social Dashboard</h1>
+
+<!-- ✨ UPDATED DESCRIPTION -->
+<p class="desc">
+  Write and share updates freely, with full control to manage or delete them anytime.
+</p>
+
+<input id="postInput" placeholder="What's on your mind?">
+<button onclick="addPost()">Post</button>
+
+<div id="feed"></div>
+
+<script>
+let posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+function renderPosts() {
+  const feed = document.getElementById("feed");
+  feed.innerHTML = "";
+
+  posts.forEach((post, index) => {
+    const div = document.createElement("div");
+    div.className = "post";
+
+    const text = document.createElement("span");
+    text.textContent = post;
+
+    const btn = document.createElement("button");
+    btn.className = "delete-btn";
+    btn.textContent = "Delete";
+
+    btn.onclick = () => {
+      posts.splice(index, 1);
+      localStorage.setItem("posts", JSON.stringify(posts));
+      renderPosts();
+    };
+
+    div.appendChild(text);
+    div.appendChild(btn);
+
+    feed.prepend(div);
+  });
+}
+
+function addPost() {
+  const input = document.getElementById("postInput");
+  if (!input.value) return;
+
+  posts.push(input.value);
+  input.value = "";
+
+  localStorage.setItem("posts", JSON.stringify(posts));
+  renderPosts();
+}
+
+renderPosts();
+</script>
+
+</body>
+</html>
